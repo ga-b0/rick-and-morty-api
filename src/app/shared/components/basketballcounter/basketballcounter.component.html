@@ -1,0 +1,19 @@
+
+<section>
+    <h2>BasketBall Counter Component</h2>
+    <form action="">
+
+    </form>
+    <select name="choice" #optionSelect>
+        @for (option of optionList; track option.name) {
+            <option value="{{option.puntuation}}">{{option.name}}</option>
+        }
+    </select>
+    <button type="button" (click)="submitDecision(optionSelect.value, 'Guest')">Guest</button>
+    <button type="button" (click)="submitDecision(optionSelect.value, 'Home')">Home</button>
+
+    <p>Guest Counter: {{guestCounter()}}</p>
+    <p>Home Counter: {{homeCounter()}}</p>
+
+</section>
+
