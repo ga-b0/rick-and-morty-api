@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { BasketOption } from '../../basket-option';
+import { BasketOption } from '../interfaces/basket-option';
 
 @Injectable({
   providedIn: 'root'

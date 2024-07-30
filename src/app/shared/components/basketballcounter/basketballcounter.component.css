@@ -1,0 +1,54 @@
+.selects {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: .5rem;
+}
+
+.selects__select {
+    padding: 10px 30px;
+    font-weight: 500;
+}
+
+.selects__buttons {
+    display: flex;
+    gap: .8rem;
+}
+
+.selects__button {
+    padding: 10px 30px;
+}
+
+.counters {
+    margin-top: 1rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+}
+
+.counter__guest {
+    padding: 10px;
+    width: min-content;
+    background-color: #FFD700;
+    color: #201d1d;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+}
+
+.counter__home {
+    padding: 10px;
+    width: min-content;
+    background-color: #FFD700;
+    color: #201d1d;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+}
+
+.counter__home__number, .counter__guest__number {
+    font-size: 2rem;
+    font-weight: 600;
+}

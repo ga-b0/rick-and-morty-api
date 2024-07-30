@@ -1,0 +1,10 @@
+<section class="section">
+    <h2>Pipes Component</h2>
+    <div class="texts">
+        <p>Percentage: {{percentage | percent: '1.2-2'}}</p>
+        <p>Date: {{date | date:'EEEE, yyyy-MMMM-d' | uppercase}}</p>
+        <p>Time: {{time | date: 'O:00 hh:mm:ss a' | lowercase}}</p>
+        <p>Decimal: {{decimal | number: '3.0-0'}}</p>
+        <p>Currency: {{currency | currency:'GBP':'symbol':'2.4-4':'en'}}</p>
+    </div>
+</section>

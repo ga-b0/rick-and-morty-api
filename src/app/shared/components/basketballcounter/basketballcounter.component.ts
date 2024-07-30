@@ -1,5 +1,5 @@
 import { Component, inject, signal } from '@angular/core';
-import { BasketOption } from '../../../basket-option';
+import { BasketOption } from '../../interfaces/basket-option';
 import { BasketballService } from '../../services/basketball.service';
 
 @Component({
@@ -22,24 +22,10 @@ export class BasketballcounterComponent {
   }
 
   submitDecision(option: string, player: string): void {
-    if(option === "1"){
-      if(player === "Guest"){
-        this.guestCounter.update(counter => counter + 1);
-      } else {
-        this.homeCounter.update(counter => counter + 1);
-      }
-    } else if(option === "2"){
-      if(player === "Guest"){
-        this.guestCounter.update(counter => counter + 2);
-      } else {
-        this.homeCounter.update(counter => counter + 2);
-      }
+    if(player === "Guest"){
+      this.guestCounter.update(counter => counter + Number(option));
     } else {
-      if(player === "Guest"){
-        this.guestCounter.update(counter => counter + 3);
-      } else {
-        this.homeCounter.update(counter => counter + 3);
-      }
+      this.homeCounter.update(counter => counter + Number(option));
     }
   }
 
