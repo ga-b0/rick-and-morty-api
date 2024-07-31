@@ -1,41 +1,53 @@
 /* You can add global styles to this file, and also import other style files */
 @font-face {
-    font-family: 'Poppins';
-    src: url('./assets/Poppins-Medium.ttf');
+  font-family: 'Poppins';
+  src: url('./assets/Poppins-Medium.ttf');
 }
 
 *,
 *::after,
 *::before {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
 body {
-    font-family: 'Poppins', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-    background-color: #022C43;
-    color: #f5e3e3;
+  font-family:
+    'Poppins',
+    system-ui,
+    -apple-system,
+    BlinkMacSystemFont,
+    'Segoe UI',
+    Roboto,
+    Oxygen,
+    Ubuntu,
+    Cantarell,
+    'Open Sans',
+    'Helvetica Neue',
+    sans-serif;
+  background-color: #022c43;
+  color: #f5e3e3;
 }
 
 .section {
-    background-color: #053F5E;
-    width: 60%;
-    max-width: 700px;
-    margin: 0 auto;
-    padding: 1rem;
-    border-radius: 16px;
-    text-align: center;
-    min-height: auto;
-    margin-bottom: 1rem;
+  background-color: #053f5e;
+  width: 60%;
+  max-width: 700px;
+  margin: 0 auto;
+  padding: 1rem;
+  border-radius: 16px;
+  text-align: center;
+  min-height: auto;
+  margin-bottom: 1rem;
 }
 
 h2 {
-    font-size: 2rem;
+  font-size: 2rem;
 }
 
 @media screen and (width <= 560px) {
-    .section {
-        width: 80%;
-    }
+  .section {
+    width: 80%;
+  }
 }

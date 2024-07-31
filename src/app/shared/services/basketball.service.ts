@@ -1,23 +1,14 @@
-import { Injectable } from '@angular/core';
-import { BasketOption } from '../interfaces/basket-option';
+import { Injectable } from '@angular/core'
+import { BasketOption } from '../interfaces/basket-option'
+import { basketOptions } from '../data/basketData'
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class BasketballService {
-
-  options: BasketOption[] = [];
-
-  constructor() { 
-    this.options = [
-      {name: "Free Throws", puntuation: 1},
-      {name: "Regular Points", puntuation: 2},
-      {name: "3-Points", puntuation: 3},
-    ]
-  }
+  options: BasketOption[] = [...basketOptions]
 
   getAllOptionsForBasketBallCounter(): BasketOption[] {
-    return this.options;
+    return this.options
   }
-
 }

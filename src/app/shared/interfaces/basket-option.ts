@@ -1,4 +1,4 @@
 export interface BasketOption {
-    name: string,
-    puntuation: number
+  name: string
+  puntuation: number
 }

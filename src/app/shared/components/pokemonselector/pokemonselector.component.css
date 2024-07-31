@@ -1,58 +1,57 @@
 .default {
-    background-color: lightskyblue;
+  background-color: lightskyblue;
 }
 
 .selected {
-    background-color: gold;
+  background-color: gold;
 }
 
 .section__paragraph {
-    margin: 10px 0;
-    font-size: 1.1rem;
-    font-weight: 600;
+  margin: 10px 0;
+  font-size: 1.1rem;
+  font-weight: 600;
 }
 
 .images {
-    display: grid;
-    width: 100%;
-    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-    gap: 1rem;
+  display: grid;
+  width: 100%;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 1rem;
 }
 
 .picture {
-    width: 100%;
-    border-radius: 15px;
-    background-color: #166894;
-    display: flex;
-    flex-direction: column;
-    gap: 5px;
-    font-weight: 600;
+  width: 100%;
+  border-radius: 15px;
+  background-color: #166894;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  font-weight: 600;
 }
 
 .picture__image {
-    display: block;
-    width: 100%;
-    object-fit: cover;
-    border-radius: 15px 15px 0 0;
+  display: block;
+  width: 100%;
+  object-fit: cover;
+  border-radius: 15px 15px 0 0;
 }
 
 .picture__image:hover {
-    cursor: pointer;
-    animation-name: upload;
-    animation-duration: .4s;
-    animation-fill-mode: forwards;
-    /*background-color: rgb(114, 198, 250);*/
+  cursor: pointer;
+  animation-name: upload;
+  animation-duration: 0.4s;
+  animation-fill-mode: forwards;
 }
 
 .text {
-    margin: 1rem 0 0 0;
-    font-size: 1.2rem;
+  margin: 1rem 0 0 0;
+  font-size: 1.2rem;
 }
 
 @keyframes upload {
-    from {
-    }
-    to {
-        transform: translateY(-5px);
-    }
+  from {
+  }
+  to {
+    transform: translateY(-5px);
+  }
 }
