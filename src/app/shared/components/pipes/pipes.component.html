@@ -1,13 +1,25 @@
 <section class="section">
   <h2>Pipes Component</h2>
   <div class="texts">
-    <p>Percentage: {{ percentage | percent: '1.2-2' }}</p>
-    <p>Date: {{ date | date: 'EEEE, yyyy-MMMM-d' | uppercase }}</p>
-    <p>Time: {{ time | date: 'O:00 hh:mm:ss a' | lowercase }}</p>
-    <p>Decimal: {{ decimal | number: '3.0-0' }}</p>
-    <p>
-      Currency:
-      {{ currency | currency: 'GBP' : 'symbol' : '2.4-4' : 'en' }}
-    </p>
+    <div class="text__box">
+      <h3 class="text__box__title">Percentage</h3>
+      <p>{{ percentage | percent: '1.2-2' }}</p>
+    </div>
+    <div class="text__box">
+      <h3 class="text__box__title">Date</h3>
+      <p>{{ date | date: 'EEEE, yyyy-MMMM-d' | uppercase }}</p>
+    </div>
+    <div class="text__box">
+      <h3 class="text__box__title">Time</h3>
+      <p>{{ time | date: 'ZZZZ hh:mm:ss a' | lowercase }}</p>
+    </div>
+    <div class="text__box">
+      <h3 class="text__box__title">Decimal</h3>
+      <p>{{ decimal | number: '3.0-0' }}</p>
+    </div>
+    <div class="text__box">
+      <h3 class="text__box__title">Currency</h3>
+      <p>{{ currency | currency: 'GBP' : 'symbol' : '2.4-4' : 'en' }}</p>
+    </div>
   </div>
 </section>

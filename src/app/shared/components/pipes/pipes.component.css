@@ -1,0 +1,25 @@
+.texts {
+  margin: 1rem 0;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1rem;
+  align-content: center;
+  justify-content: center;
+}
+
+.text__box {
+  padding: 10px 0;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  background-color: var(--box-color);
+  color: var(--text-color-inside-box);
+  border-radius: 10px;
+  height: min-content;
+}
+
+.text__box__title {
+  font-size: 1.2rem;
+  font-weight: 600;
+}

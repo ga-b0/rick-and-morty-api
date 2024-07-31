@@ -27,4 +27,9 @@ export class BasketballcounterComponent {
       this.homeCounter.update((counter) => counter + Number(option))
     }
   }
+
+  resetGame(): void {
+    this.guestCounter.set(0)
+    this.homeCounter.set(0)
+  }
 }

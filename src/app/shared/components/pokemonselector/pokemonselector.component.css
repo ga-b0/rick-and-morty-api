@@ -15,8 +15,9 @@
 .images {
   display: grid;
   width: 100%;
-  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(135px, 1fr));
   gap: 1rem;
+  margin-bottom: 1rem;
 }
 
 .picture {
@@ -34,6 +35,8 @@
   width: 100%;
   object-fit: cover;
   border-radius: 15px 15px 0 0;
+  mask-image: linear-gradient(black, transparent);
+  /*margin-bottom: 1rem;*/
 }
 
 .picture__image:hover {
@@ -44,7 +47,7 @@
 }
 
 .text {
-  margin: 1rem 0 0 0;
+  /*margin: 1rem 0 0 0;*/
   font-size: 1.2rem;
 }
 
