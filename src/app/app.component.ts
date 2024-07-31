@@ -1,9 +1,9 @@
 import { Component } from '@angular/core'
-import { RouterOutlet } from '@angular/router'
-import { BasketballcounterComponent } from './shared/components/basketballcounter/basketballcounter.component'
 import { CommonModule } from '@angular/common'
-import { PokemonselectorComponent } from './shared/components/pokemonselector/pokemonselector.component'
-import { PipesComponent } from './shared/components/pipes/pipes.component'
+import { RouterOutlet } from '@angular/router'
+import { BasketballcounterComponent } from '@component/basketballcounter/basketballcounter.component'
+import { PokemonselectorComponent } from '@component/pokemonselector/pokemonselector.component'
+import { PipesComponent } from '@component/pipes/pipes.component'
 
 @Component({
   selector: 'app-root',

@@ -6,8 +6,8 @@ import {
   ElementRef,
   ViewChild,
 } from '@angular/core'
-import { PokemonService } from '../../services/pokemon.service'
-import { Pokemonselector } from '../../interfaces/pokemonselector'
+import { PokemonService } from '@services/pokemon.service'
+import { Pokemonselector } from '@interfaces/pokemonselector'
 
 @Component({
   selector: 'app-pokemonselector',

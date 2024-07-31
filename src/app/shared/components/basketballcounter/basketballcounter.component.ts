@@ -1,6 +1,6 @@
 import { Component, inject, signal } from '@angular/core'
-import { BasketOption } from '../../interfaces/basket-option'
-import { BasketballService } from '../../services/basketball.service'
+import { BasketOption } from '@interfaces/basket-option'
+import { BasketballService } from '@services/basketball.service'
 
 @Component({
   selector: 'app-basketballcounter',
