@@ -36,6 +36,8 @@
   padding: 12px 42px;
   background-color: lightskyblue;
   transform: translateY(-6px);
+  will-change: transform;
+  transition: transform 250ms;
 }
 
 .counters {

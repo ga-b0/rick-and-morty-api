@@ -2,7 +2,7 @@
   <h2>BasketBall Counter Component</h2>
   <div class="selects">
     <select name="choice" #optionSelect class="selects__select">
-      @for (option of optionList; track option.name) {
+      @for (option of optionList; track option.id) {
         <option value="{{ option.puntuation }}">
           {{ option.name }}
         </option>

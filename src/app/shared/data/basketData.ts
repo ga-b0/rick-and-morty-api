@@ -1,5 +1,5 @@
 export const basketOptions = [
-  { name: 'Free Throws', puntuation: 1 },
-  { name: 'Regular Points', puntuation: 2 },
-  { name: '3-Points', puntuation: 3 },
+  { id: 1, name: 'Free Throws', puntuation: 1 },
+  { id: 2, name: 'Regular Points', puntuation: 2 },
+  { id: 3, name: '3-Points', puntuation: 3 },
 ]

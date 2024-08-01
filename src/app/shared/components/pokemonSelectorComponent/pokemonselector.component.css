@@ -36,7 +36,6 @@
   object-fit: cover;
   border-radius: 15px 15px 0 0;
   mask-image: linear-gradient(black, transparent);
-  /*margin-bottom: 1rem;*/
 }
 
 .picture__button {
@@ -54,7 +53,6 @@
 }
 
 .text {
-  /*margin: 1rem 0 0 0;*/
   font-size: 1.2rem;
 }
 
