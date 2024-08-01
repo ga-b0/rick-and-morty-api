@@ -23,7 +23,7 @@
 .picture {
   width: 100%;
   border-radius: 15px;
-  background-color: #166894;
+  background-color: var(--background-color-picture);
   display: flex;
   flex-direction: column;
   gap: 5px;

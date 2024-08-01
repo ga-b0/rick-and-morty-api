@@ -14,14 +14,14 @@
         (click)="submitDecision(optionSelect.value, 'Guest')"
         class="selects__button"
       >
-        Guest
+        <span class="selects__buttons--text"> Guest </span>
       </button>
       <button
         type="button"
         (click)="submitDecision(optionSelect.value, 'Home')"
         class="selects__button"
       >
-        Home
+        <span class="selects__buttons--text"> Home </span>
       </button>
     </div>
   </div>
@@ -35,11 +35,7 @@
       <p>Home Counter</p>
     </div>
   </div>
-  <button
-    type="button"
-    class="selects__button selects__button--reset"
-    (click)="resetGame()"
-  >
-    Reset
+  <button type="button" class="selects__button" (click)="resetGame()">
+    <span class="selects__buttons--text"> Reset </span>
   </button>
 </section>

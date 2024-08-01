@@ -9,6 +9,7 @@
   --box-color: #ffd700;
   --text-color-inside-box: #201d1d;
   --text-default-color: #f5e3e3;
+  --background-color-picture: #166894;
 }
 
 @font-face {
@@ -48,6 +49,6 @@ h2 {
 
 @media screen and (width <= 560px) {
   .section {
-    width: 80%;
+    width: 100%;
   }
 }

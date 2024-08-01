@@ -8,7 +8,8 @@
 
 .selects__select {
   padding: 10px 30px;
-  font-weight: 500;
+  border-radius: 10px;
+  border: 1px solid black;
 }
 
 .selects__buttons {
@@ -17,11 +18,24 @@
 }
 
 .selects__button {
-  padding: 10px 30px;
+  margin-top: 1rem;
+  background-color: rgb(87, 173, 226);
+  border-radius: 10px;
+  border: none;
+  cursor: pointer;
+  outline-offset: 4px;
 }
 
-.selects__button--reset {
-  margin: 1rem 0 0 0;
+.selects__button:active .selects__buttons--text {
+  transform: translateY(-2px);
+}
+
+.selects__buttons--text {
+  display: block;
+  border-radius: 10px;
+  padding: 12px 42px;
+  background-color: lightskyblue;
+  transform: translateY(-6px);
 }
 
 .counters {
