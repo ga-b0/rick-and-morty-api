@@ -2,41 +2,28 @@
   <h2>Pokemon Selector Component</h2>
   <p class="section__paragraph">Select a Pokémon</p>
   <article class="images">
-    <figure class="picture">
-      <button class="picture__button" (click)="selectedPlayer(1)">
-        <img
-          #bulbasaur
-          src="/bulbasaur.png"
-          alt="Bulbasaur"
-          class="default picture__image"
-        />
-      </button>
-      <figcaption>Bulbasaur</figcaption>
-    </figure>
-    <figure class="picture">
-      <button class="picture__button" (click)="selectedPlayer(2)">
-        <img
-          #charmander
-          src="/charmander.png"
-          alt="Charmander"
-          class="default picture__image"
-        />
-      </button>
-      <figcaption>Charmander</figcaption>
-    </figure>
-    <figure class="picture">
-      <button class="picture__button" (click)="selectedPlayer(3)">
-        <img
-          #squirtle
-          src="/squirtle.png"
-          alt="Squirtle"
-          class="default picture__image"
-        />
-      </button>
-      <figcaption>Squirtle</figcaption>
-    </figure>
+    @for (pokemon of pokemons; track pokemon.id) {
+      <figure class="picture">
+        <button
+          class="picture__button"
+          (click)="selectedPlayer(pokemon.option)"
+        >
+          <img
+            [ngClass]="
+              optionPlayerSelected() === pokemon.option ? 'selected' : 'default'
+            "
+            src="{{ pokemon.route }}"
+            alt="{{ pokemon.name }}"
+            class="picture__image"
+          />
+        </button>
+        <figcaption>{{ pokemon.name }}</figcaption>
+      </figure>
+    }
   </article>
   @if (textToShowPlayerSelected() !== '') {
-    <p class="text">{{ textToShowPlayerSelected() }}</p>
+    <p class="text">
+      You're picked <span>{{ textToShowPlayerSelected() | uppercase }}</span>
+    </p>
   }
 </section>
