@@ -1,5 +1,5 @@
 export interface BasketOption {
-  id: number
+  id: string
   name: string
   puntuation: number
 }

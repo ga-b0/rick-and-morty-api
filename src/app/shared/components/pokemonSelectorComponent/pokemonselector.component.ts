@@ -17,7 +17,7 @@ export class PokemonselectorComponent {
   textToShowPlayerSelected = computed(() => {
     if (this.optionPlayerSelected() !== 0) {
       for (const pokemon of this.pokemons) {
-        if (pokemon.option === this.optionPlayerSelected()) {
+        if (pokemon.value === this.optionPlayerSelected()) {
           return pokemon.name
         }
       }

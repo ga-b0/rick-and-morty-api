@@ -5,15 +5,15 @@
     @for (pokemon of pokemons; track pokemon.id) {
       <figure class="picture">
         <button
+          [ngClass]="
+            optionPlayerSelected() === pokemon.value ? 'selected' : 'default'
+          "
           class="picture__button"
-          (click)="selectedPlayer(pokemon.option)"
+          (click)="selectedPlayer(pokemon.value)"
         >
           <img
-            [ngClass]="
-              optionPlayerSelected() === pokemon.option ? 'selected' : 'default'
-            "
-            src="{{ pokemon.route }}"
-            alt="{{ pokemon.name }}"
+            [src]="pokemon.imageUrl"
+            [alt]="pokemon.name"
             class="picture__image"
           />
         </button>

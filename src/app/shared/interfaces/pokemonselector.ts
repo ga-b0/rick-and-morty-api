@@ -1,6 +1,6 @@
 export interface Pokemonselector {
-  id: number
-  route: string
+  id: string
+  imageUrl: string
   name: string
-  option: number
+  value: number
 }

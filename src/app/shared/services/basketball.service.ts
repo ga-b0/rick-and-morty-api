@@ -8,7 +8,7 @@ import { basketOptions } from '@fakedata/basketData'
 export class BasketballService {
   options: BasketOption[] = [...basketOptions]
 
-  getAllOptionsForBasketBallCounter(): BasketOption[] {
+  getAllOptions(): BasketOption[] {
     return this.options
   }
 }

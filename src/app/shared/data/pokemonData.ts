@@ -1,20 +1,22 @@
-export const pokemonData = [
+import { Pokemonselector } from '@interfaces/pokemonselector'
+
+export const pokemonData: Pokemonselector[] = [
   {
-    id: 1,
-    route: '/bulbasaur.png',
+    id: crypto.randomUUID(),
+    imageUrl: '/bulbasaur.png',
     name: 'Bulbasaur',
-    option: 1,
+    value: 1,
   },
   {
-    id: 2,
-    route: '/charmander.png',
+    id: crypto.randomUUID(),
+    imageUrl: '/charmander.png',
     name: 'Charmander',
-    option: 2,
+    value: 2,
   },
   {
-    id: 3,
-    route: '/squirtle.png',
+    id: crypto.randomUUID(),
+    imageUrl: '/squirtle.png',
     name: 'Squirtle',
-    option: 3,
+    value: 3,
   },
 ]
