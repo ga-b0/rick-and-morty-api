@@ -3,7 +3,7 @@
   <div class="selects">
     <select name="choice" #optionSelect class="selects__select">
       @for (option of optionList; track option.id) {
-        <option [value]="option.puntuation">
+        <option [value]="option.score">
           {{ option.name }}
         </option>
       }
