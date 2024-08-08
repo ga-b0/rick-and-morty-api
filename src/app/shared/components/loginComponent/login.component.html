@@ -1,0 +1,11 @@
+<section>
+  <form [formGroup]="loginForm" (ngSubmit)="submitSesion()">
+    <label for="username">Username: </label>
+    <input type="text" id="username" formControlName="username" />
+
+    <label for="password">Password: </label>
+    <input type="password" id="password" formControlName="password" />
+
+    <button [disabled]="!loginForm.valid">Iniciar Sesión</button>
+  </form>
+</section>
