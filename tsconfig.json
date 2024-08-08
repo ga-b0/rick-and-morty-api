@@ -23,6 +23,7 @@
     "paths": {
       "@services/*": ["./src/app/shared/services/*"],
       "@interfaces/*": ["./src/app/shared/interfaces/*"],
+      "@enums/*": ["./src/app/shared/enums/*"],
       "@fakedata/*": ["./src/app/shared/data/*"],
       "@component/*": ["./src/app/shared/components/*"]
     }
