@@ -1,11 +1,6 @@
 import { Routes } from '@angular/router'
-import { BasketballcounterComponent } from '@component/basketballCounterComponent/basketballcounter.component'
-import { PipesComponent } from '@component/pipesComponent/pipes.component'
-import { PokemonselectorComponent } from '@component/pokemonSelectorComponent/pokemonselector.component'
-import { CharacterListComponent } from '@component/characterListComponent/character-list.component'
-import { NotfoundComponent } from '@component/notFoundComponent/notfound.component'
-import { LoginComponent } from '@component/loginComponent/login.component'
 import { authGuard } from './shared/guards/auth.guard'
+import { loginGuard } from './shared/guards/login.guard'
 
 export const routes: Routes = [
   {
@@ -15,36 +10,65 @@ export const routes: Routes = [
   },
   {
     path: 'login',
-    component: LoginComponent,
+    loadComponent: () =>
+      import('./shared/components/login/login.component').then(
+        (m) => m.LoginComponent
+      ),
+    canActivate: [loginGuard],
     title: 'Login',
   },
   {
-    path: 'basketball-counter',
-    component: BasketballcounterComponent,
+    path: 'home',
+    loadComponent: () =>
+      import('./shared/components/home/home.component').then(
+        (m) => m.HomeComponent
+      ),
     canActivate: [authGuard],
-    title: 'Basket Counter',
-  },
-  {
-    path: 'pokemon-selector',
-    component: PokemonselectorComponent,
-    canActivate: [authGuard],
-    title: 'Pokemon Selector',
-  },
-  {
-    path: 'pipes',
-    component: PipesComponent,
-    canActivate: [authGuard],
-    title: 'Pipes',
-  },
-  {
-    path: 'rest-api',
-    component: CharacterListComponent,
-    canActivate: [authGuard],
-    title: 'Character List',
+    children: [
+      {
+        path: 'basketball-counter',
+        loadComponent: () =>
+          import(
+            './shared/components/basketball-counter/basketballcounter.component'
+          ).then((m) => m.BasketballcounterComponent),
+        title: 'Basket Counter',
+        canActivate: [authGuard],
+      },
+      {
+        path: 'pokemon-selector',
+        loadComponent: () =>
+          import(
+            './shared/components/pokemon-selector/pokemonselector.component'
+          ).then((m) => m.PokemonselectorComponent),
+        title: 'Pokemon Selector',
+        canActivate: [authGuard],
+      },
+      {
+        path: 'pipes',
+        loadComponent: () =>
+          import('./shared/components/pipes/pipes.component').then(
+            (m) => m.PipesComponent
+          ),
+        title: 'Pipes',
+        canActivate: [authGuard],
+      },
+      {
+        path: 'rest-api',
+        loadComponent: () =>
+          import(
+            './shared/components/character-list/character-list.component'
+          ).then((m) => m.CharacterListComponent),
+        title: 'Character List',
+        canActivate: [authGuard],
+      },
+    ],
   },
   {
     path: '**',
-    component: NotfoundComponent,
+    loadComponent: () =>
+      import('./shared/components/not-found/notfound.component').then(
+        (m) => m.NotfoundComponent
+      ),
     title: 'Not Found',
   },
 ]

@@ -1,8 +1,9 @@
-import { Component } from '@angular/core'
+import { Component, inject } from '@angular/core'
 import { ReactiveFormsModule } from '@angular/forms'
 import { FormControl, FormGroup, Validators } from '@angular/forms'
 import { LoginFields } from '@interfaces/login-fields'
-import { userCredentials } from '@fakedata/credentialsUser'
+import { userCredentials } from '@fakedata/credentials-user'
+import { Router } from '@angular/router'
 
 @Component({
   selector: 'app-login',
@@ -22,17 +23,16 @@ export class LoginComponent {
       validators: [Validators.required, Validators.minLength(8)],
     }),
   })
+  router = inject(Router)
 
   submitSesion(): void {
-    console.log(this.loginForm.value.username)
-    console.log(this.loginForm.value.password)
-
     if (
       this.loginForm.value.username === userCredentials.username &&
       this.loginForm.value.password === userCredentials.password
     ) {
       window.localStorage.setItem('username', this.loginForm.value.username)
       window.localStorage.setItem('loggedin', 'true')
+      this.router.navigate(['/home'])
     }
   }
 }

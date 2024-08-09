@@ -1,0 +1,41 @@
+.header {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  background-color: var(--section-color);
+  min-height: 50px;
+}
+
+.header__home {
+  text-decoration: none;
+  color: var(--text-default-color);
+}
+
+.header__links {
+  list-style: none;
+}
+
+.header__links {
+  display: flex;
+  gap: 1rem;
+}
+
+.header__link {
+  text-decoration: none;
+  color: var(--text-default-color);
+}
+
+.header__user {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.header__logout {
+  cursor: pointer;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 20px;
+  font-weight: 600;
+  background-color: var(--box-color);
+}

@@ -1,9 +1,9 @@
 import { Component } from '@angular/core'
 import { CommonModule } from '@angular/common'
 import { RouterOutlet } from '@angular/router'
-import { BasketballcounterComponent } from '@component/basketballCounterComponent/basketballcounter.component'
-import { PokemonselectorComponent } from '@component/pokemonSelectorComponent/pokemonselector.component'
-import { PipesComponent } from '@component/pipesComponent/pipes.component'
+import { BasketballcounterComponent } from '@component/basketball-counter/basketballcounter.component'
+import { PokemonselectorComponent } from '@component/pokemon-selector/pokemonselector.component'
+import { PipesComponent } from '@component/pipes/pipes.component'
 
 @Component({
   selector: 'app-root',

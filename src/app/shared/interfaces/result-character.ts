@@ -10,7 +10,7 @@ export interface ResultCharacter {
   origin: OriginResultCharacter
   location: OriginResultCharacter
   image: string
-  episode: string[]
   url: string
   created: string
+  episode: string[]
 }
