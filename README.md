@@ -33,3 +33,11 @@ or
 ```bash
 ng serve --open
 ```
+
+## User Credentials
+
+username
+`johndoe`
+
+password
+`1234pass`
