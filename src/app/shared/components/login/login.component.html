@@ -1,11 +1,26 @@
-<section>
-  <form [formGroup]="loginForm" (ngSubmit)="submitSesion()">
-    <label for="username">Username: </label>
-    <input type="text" id="username" formControlName="username" />
-
-    <label for="password">Password: </label>
-    <input type="password" id="password" formControlName="password" />
-
-    <button [disabled]="!loginForm.valid">Iniciar Sesión</button>
+<section class="login__section">
+  <h2>Welcome Back</h2>
+  <form [formGroup]="loginForm" (ngSubmit)="submitSesion()" class="login__form">
+    <div class="form__email">
+      <label for="username">Username: </label>
+      <input
+        class="form__input"
+        type="text"
+        id="username"
+        formControlName="username"
+      />
+    </div>
+    <div class="form__password">
+      <label for="password">Password: </label>
+      <input
+        class="form__input"
+        type="password"
+        id="password"
+        formControlName="password"
+      />
+    </div>
+    <button class="form__button" [disabled]="!loginForm.valid">
+      Iniciar Sesión
+    </button>
   </form>
 </section>

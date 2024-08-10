@@ -1,0 +1,65 @@
+.login__section {
+  background-color: var(--section-color);
+  width: 30%;
+  padding: 1rem;
+  text-align: center;
+  border-radius: 20px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.login__form {
+  margin-top: 1rem;
+  display: flex;
+  gap: 2rem;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.form__email {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: start;
+  gap: 5px;
+  align-items: center;
+  width: 100%;
+}
+
+.form__password {
+  width: 100%;
+  text-align: start;
+  display: flex;
+  gap: 5px;
+  align-items: center;
+  flex-direction: column;
+}
+
+.form__input {
+  padding: 0.5rem 1rem;
+  border-radius: 5px;
+  width: 80%;
+}
+
+.form__button {
+  font-weight: 600;
+  cursor: pointer;
+  width: 80%;
+  padding: 1rem 2rem;
+  border-radius: 30px;
+  color: var(--text-default-color);
+  background-color: #0683c696;
+  border: none;
+}
+
+.form__input:focus {
+  border: none;
+}
+
+.form__button:disabled {
+  background-color: var(--background-color);
+  color: gray;
+}
