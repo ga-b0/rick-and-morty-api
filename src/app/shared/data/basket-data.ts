@@ -1,4 +1,4 @@
-import { BasketOption } from '@interfaces/basket-option'
+import { BasketOption } from '@interfaces/basket/basket-option'
 
 export const basketOptions: BasketOption[] = [
   { id: crypto.randomUUID(), name: 'Regular Points', score: 2 },

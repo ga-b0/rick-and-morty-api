@@ -1,13 +1,15 @@
 import { Component, inject } from '@angular/core'
-import { CharacterService } from '@services/character.service'
-import { CharacterList } from '@interfaces/character-list'
-import { EpisodeInfo } from '@interfaces/episode-info'
 import { CommonModule } from '@angular/common'
+import { HttpErrorResponse } from '@angular/common/http'
+import { FormControl, FormGroup, ReactiveFormsModule } from '@angular/forms'
+import { CharacterService } from '@services/character.service'
+import { CharacterList } from '@interfaces/characters/character-list'
+import { FilteredResults } from '@interfaces/characters/filtered-results'
 
 @Component({
   selector: 'app-character-list',
   standalone: true,
-  imports: [CommonModule],
+  imports: [CommonModule, ReactiveFormsModule],
   templateUrl: './character-list.component.html',
   styleUrl: './character-list.component.css',
 })
@@ -15,9 +17,19 @@ export class CharacterListComponent {
   readonly API_CHARACTERS_URL = 'https://rickandmortyapi.com/api/character'
   characterService = inject(CharacterService)
   charactersInfo?: CharacterList
-  episodes?: EpisodeInfo[]
+  charactersFiltered?: CharacterList
   startValue = 1
   endValue = this.charactersInfo?.info.pages
+  status = ['all', 'alive', 'dead', 'unknown']
+  gender = ['all', 'male', 'female', 'genderless', 'unknown']
+
+  filteredForm = new FormGroup<FilteredResults>({
+    name: new FormControl(''),
+    specie: new FormControl(''),
+    type: new FormControl(''),
+    status: new FormControl(this.status[0]),
+    gender: new FormControl(this.gender[0]),
+  })
 
   constructor() {
     this.characterService
@@ -49,14 +61,41 @@ export class CharacterListComponent {
       .subscribe((data) => (this.charactersInfo = data))
   }
 
-  generatePages(
-    start: number | undefined,
-    end: number | undefined
-  ): number[] | undefined {
-    if (start === undefined || end === undefined) {
-      return undefined
+  submitFilter(): void {
+    const nameValue = this.filteredForm.value.name?.toLowerCase()
+    const typeValue = this.filteredForm.value.type?.toLowerCase()
+    let genderValue = this.filteredForm.value.gender?.toLowerCase()
+    let statusValue = this.filteredForm.value.status?.toLocaleLowerCase()
+    const specieValue = this.filteredForm.value.specie?.toLocaleLowerCase()
+    if (statusValue === 'all') {
+      statusValue = ''
     }
-    const length = end - start + 1
-    return Array.from({ length }, (_, index) => start + index)
+    if (genderValue === 'all') {
+      genderValue = ''
+    }
+    this.characterService
+      .getAllCharacters(
+        this.API_CHARACTERS_URL +
+          `/?name=${nameValue}&status=${statusValue}&gender=${genderValue}&type=${typeValue}&species=${specieValue}`
+      )
+      .subscribe(
+        (data) => (this.charactersInfo = data),
+        (err: HttpErrorResponse) => {
+          if (err.status === 404) {
+            this.charactersInfo = undefined
+          }
+        }
+      )
+  }
+
+  resetFilter(): void {
+    this.filteredForm.reset({
+      name: '',
+      specie: '',
+      type: '',
+      status: this.status[0],
+      gender: this.gender[0],
+    })
+    this.characterService.getAllCharacters(this.API_CHARACTERS_URL)
   }
 }

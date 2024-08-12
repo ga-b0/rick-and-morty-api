@@ -9,6 +9,11 @@
         id="username"
         formControlName="username"
       />
+      <span
+        class="invalid__text"
+        *ngIf="loginForm.get('username')?.hasError('required') && formSubmitted"
+        >El usuario es requerido</span
+      >
     </div>
     <div class="form__password">
       <label for="password">Password: </label>
@@ -18,9 +23,19 @@
         id="password"
         formControlName="password"
       />
+      <span
+        class="invalid__text"
+        *ngIf="
+          loginForm.get('password')?.hasError('minlength') && formSubmitted
+        "
+        >La contraseña debe tener como mínimo 8 caracteres</span
+      >
+      <span
+        class="invalid__text"
+        *ngIf="loginForm.get('password')?.hasError('required') && formSubmitted"
+        >La contraseña es requerida</span
+      >
     </div>
-    <button class="form__button" [disabled]="!loginForm.valid">
-      Iniciar Sesión
-    </button>
+    <button class="form__button">Iniciar Sesión</button>
   </form>
 </section>

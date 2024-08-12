@@ -44,6 +44,14 @@
   width: 80%;
 }
 
+.form__input--invalid {
+  border: 2px solid rgb(245, 85, 85);
+}
+
+.invalid__text {
+  color: rgb(245, 85, 85);
+}
+
 .form__button {
   font-weight: 600;
   cursor: pointer;
@@ -55,8 +63,8 @@
   border: none;
 }
 
-.form__input:focus {
-  border: none;
+.form__input:focus-visible {
+  outline: none;
 }
 
 .form__button:disabled {

@@ -4,6 +4,7 @@
   align-items: center;
   background-color: var(--section-color);
   min-height: 50px;
+  margin-bottom: 1.5rem;
 }
 
 .header__home {
@@ -25,6 +26,11 @@
   color: var(--text-default-color);
 }
 
+.header__link:hover,
+.header__home:hover {
+  text-decoration: underline;
+}
+
 .header__user {
   display: flex;
   align-items: center;
@@ -38,4 +44,7 @@
   border-radius: 20px;
   font-weight: 600;
   background-color: var(--box-color);
+}
+
+@media screen and (width <= 768px) {
 }

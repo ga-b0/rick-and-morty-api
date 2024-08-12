@@ -12,6 +12,10 @@
   border: 1px solid black;
 }
 
+.selects__select:focus-visible {
+  outline: none;
+}
+
 .selects__buttons {
   display: flex;
   gap: 0.8rem;
@@ -19,7 +23,7 @@
 
 .selects__button {
   margin-top: 1rem;
-  background-color: rgb(87, 173, 226);
+  background-color: var(--button-color);
   border-radius: 10px;
   border: none;
   cursor: pointer;

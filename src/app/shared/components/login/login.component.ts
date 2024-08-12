@@ -1,18 +1,20 @@
 import { Component, inject } from '@angular/core'
-import { ReactiveFormsModule } from '@angular/forms'
-import { FormControl, FormGroup, Validators } from '@angular/forms'
-import { LoginFields } from '@interfaces/login-fields'
-import { userCredentials } from '@fakedata/credentials-user'
+import { AbstractControl, ReactiveFormsModule } from '@angular/forms'
 import { Router } from '@angular/router'
+import { FormControl, FormGroup, Validators } from '@angular/forms'
+import { CommonModule } from '@angular/common'
+import { LoginFields } from '@interfaces/login/login-fields'
+import { userCredentials } from '@fakedata/credentials-user'
 
 @Component({
   selector: 'app-login',
   standalone: true,
-  imports: [ReactiveFormsModule],
+  imports: [ReactiveFormsModule, CommonModule],
   templateUrl: './login.component.html',
   styleUrl: './login.component.css',
 })
 export class LoginComponent {
+  formSubmitted = false
   loginForm = new FormGroup<LoginFields>({
     username: new FormControl('', {
       nonNullable: true,
@@ -26,6 +28,11 @@ export class LoginComponent {
   router = inject(Router)
 
   submitSesion(): void {
+    if (!this.loginForm.valid) {
+      this.formSubmitted = true
+      return
+    }
+
     if (
       this.loginForm.value.username === userCredentials.username &&
       this.loginForm.value.password === userCredentials.password
@@ -34,5 +41,9 @@ export class LoginComponent {
       window.localStorage.setItem('loggedin', 'true')
       this.router.navigate(['/home'])
     }
+  }
+
+  get username(): AbstractControl | null {
+    return this.loginForm.get('username')
   }
 }

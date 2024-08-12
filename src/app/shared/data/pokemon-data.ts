@@ -1,4 +1,4 @@
-import { Pokemonselector } from '@interfaces/pokemonselector'
+import { Pokemonselector } from '@interfaces/pokemon/pokemonselector'
 
 export const pokemonData: Pokemonselector[] = [
   {

@@ -10,6 +10,7 @@
   --text-color-inside-box: #201d1d;
   --text-default-color: #f5e3e3;
   --background-color-picture: #166894;
+  --button-color: rgb(87, 173, 226);
 }
 
 @font-face {

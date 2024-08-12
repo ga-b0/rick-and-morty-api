@@ -1,8 +1,8 @@
 import { Injectable } from '@angular/core'
 import { HttpClient } from '@angular/common/http'
 import { map, mergeMap, Observable, forkJoin } from 'rxjs'
-import { CharacterList } from '@interfaces/character-list'
-import { EpisodeInfo } from '@interfaces/episode-info'
+import { CharacterList } from '@interfaces/characters/character-list'
+import { EpisodeInfo } from '@interfaces/characters/episode-info'
 
 @Injectable({
   providedIn: 'root',
