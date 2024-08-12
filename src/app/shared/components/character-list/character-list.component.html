@@ -1,19 +1,13 @@
 <section>
-  <button
-    (click)="prevPage()"
-    [disabled]="characterResponse?.info?.prev === null"
-  >
+  <button (click)="prevPage()" [disabled]="charactersInfo?.info?.prev === null">
     Prev
   </button>
-  <button
-    (click)="nextPage()"
-    [disabled]="characterResponse?.info?.next === null"
-  >
+  <button (click)="nextPage()" [disabled]="charactersInfo?.info?.next === null">
     Next
   </button>
 </section>
 <section class="characters">
-  @for (character of characterResponse?.results; track character.id) {
+  @for (character of charactersInfo?.results; track character.id) {
     <article class="characters__character">
       <figure class="character__picture">
         <img
@@ -30,7 +24,7 @@
         <p>Last known location:</p>
         <p>{{ character.location.name }}</p>
         <p>First seen in:</p>
-        <p>{{ character.episode[0] }}</p>
+        <p>{{ character.episodeInfo?.name }}</p>
       </div>
     </article>
   }

@@ -1,4 +1,5 @@
 import { OriginResultCharacter } from './origin-result-character'
+import { EpisodeInfo } from './episode-info'
 
 export interface ResultCharacter {
   id: number
@@ -13,4 +14,5 @@ export interface ResultCharacter {
   url: string
   created: string
   episode: string[]
+  episodeInfo?: EpisodeInfo
 }

@@ -1,52 +1,42 @@
 import { Component, inject } from '@angular/core'
 import { CharacterService } from '@services/character.service'
-import { AsyncPipe } from '@angular/common'
 import { CharacterList } from '@interfaces/character-list'
+import { EpisodeInfo } from '@interfaces/episode-info'
 
 @Component({
   selector: 'app-character-list',
   standalone: true,
-  imports: [AsyncPipe],
+  imports: [],
   templateUrl: './character-list.component.html',
   styleUrl: './character-list.component.css',
 })
 export class CharacterListComponent {
   readonly API_CHARACTERS_URL = 'https://rickandmortyapi.com/api/character'
   characterService = inject(CharacterService)
-  characterResponse?: CharacterList
+  charactersInfo?: CharacterList
+  episodes?: EpisodeInfo[]
 
   constructor() {
-    this.getAllCharacter(this.API_CHARACTERS_URL)
-  }
-
-  getAllCharacter(url: string): void {
     this.characterService
-      .getAllCharacters(url)
-      .subscribe((data: CharacterList) => {
-        this.characterResponse = data
-        this.getCharacterEpisodes()
+      .getAllCharacters(this.API_CHARACTERS_URL)
+      .subscribe((data) => {
+        this.charactersInfo = data
       })
   }
 
-  getCharacterEpisodes(): void {
-    this.characterResponse!.results.forEach((character) => {
-      this.characterService
-        .getAllEpisodes(character.episode[0])
-        .subscribe((data) => {
-          character.episode[0] = data.name
-        })
-    })
-  }
-
   prevPage(): void {
-    if (this.characterResponse?.info.prev !== null) {
-      this.getAllCharacter(this.characterResponse!.info.prev)
+    if (this.charactersInfo?.info.prev !== null) {
+      this.characterService
+        .getAllCharacters(this.charactersInfo!.info.prev)
+        .subscribe((data) => (this.charactersInfo = data))
     }
   }
 
   nextPage(): void {
-    if (this.characterResponse?.info.next !== null) {
-      this.getAllCharacter(this.characterResponse!.info.next)
+    if (this.charactersInfo?.info.next !== null) {
+      this.characterService
+        .getAllCharacters(this.charactersInfo!.info.next)
+        .subscribe((data) => (this.charactersInfo = data))
     }
   }
 }

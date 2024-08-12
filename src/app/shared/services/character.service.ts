@@ -1,8 +1,8 @@
 import { Injectable } from '@angular/core'
 import { HttpClient } from '@angular/common/http'
-import { Observable } from 'rxjs'
+import { map, mergeMap, Observable, forkJoin } from 'rxjs'
 import { CharacterList } from '@interfaces/character-list'
-import { Episode } from '@interfaces/episode'
+import { EpisodeInfo } from '@interfaces/episode-info'
 
 @Injectable({
   providedIn: 'root',
@@ -13,29 +13,25 @@ export class CharacterService {
 
   constructor(private http: HttpClient) {}
 
-  // getCharacterData(url: string): void {
-  //   this.http.get<CharacterList>(url).pipe(switchMap((data:any) => {
-  //     console.log(data.info)
-  //   })).subscribe()
-  // }
-
-  // getDataCharacters(url: string): void {
-  //   this.http.get(url).pipe(
-  //     switchMap((character) => {
-  //       console.log(character)
-  //     })
-  //   ).subscribe()
-  // }
-
   getAllCharacters(url: string): Observable<CharacterList> {
-    return this.http.get<CharacterList>(url)
-  }
+    return this.http.get<CharacterList>(url).pipe(
+      mergeMap((characterList: CharacterList) => {
+        const charactersWithEpisodes = characterList.results.map((character) =>
+          this.http.get<EpisodeInfo>(character.episode[0]).pipe(
+            map((episodeInfo) => ({
+              ...character,
+              episodeInfo,
+            }))
+          )
+        )
 
-  getExperimentalCharacters(url: string): Observable<CharacterList> {
-    return this.http.get<CharacterList>(url)
-  }
-
-  getAllEpisodes(url: string): Observable<Episode> {
-    return this.http.get<Episode>(url)
+        return forkJoin(charactersWithEpisodes).pipe(
+          map((updatedCharacters) => ({
+            ...characterList,
+            results: updatedCharacters,
+          }))
+        )
+      })
+    )
   }
 }
