@@ -1,8 +1,16 @@
-<section>
-  <button (click)="prevPage()" [disabled]="charactersInfo?.info?.prev === null">
+<section class="pagination">
+  <button
+    class="pagination__button"
+    (click)="prevPage()"
+    [disabled]="charactersInfo?.info?.prev === null"
+  >
     Prev
   </button>
-  <button (click)="nextPage()" [disabled]="charactersInfo?.info?.next === null">
+  <button
+    class="pagination__button"
+    (click)="nextPage()"
+    [disabled]="charactersInfo?.info?.next === null"
+  >
     Next
   </button>
 </section>
@@ -19,11 +27,21 @@
       <div class="texts">
         <h2 class="character__name">{{ character.name }}</h2>
         <p class="character__status">
-          <span></span>{{ character.status }} - {{ character.species }}
+          <span
+            [ngClass]="
+              character.status === 'Alive'
+                ? 'character__status__circle--alive'
+                : character.status === 'Dead'
+                  ? 'character__status__circle--dead'
+                  : 'character__status__circle--unknown'
+            "
+            class="character__status__circle"
+          ></span
+          >{{ character.status }} - {{ character.species }}
         </p>
-        <p>Last known location:</p>
+        <p class="text__location">Last known location:</p>
         <p>{{ character.location.name }}</p>
-        <p>First seen in:</p>
+        <p class="text__episode">First seen in:</p>
         <p>{{ character.episodeInfo?.name }}</p>
       </div>
     </article>

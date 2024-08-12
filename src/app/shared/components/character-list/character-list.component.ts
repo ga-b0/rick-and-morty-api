@@ -2,11 +2,12 @@ import { Component, inject } from '@angular/core'
 import { CharacterService } from '@services/character.service'
 import { CharacterList } from '@interfaces/character-list'
 import { EpisodeInfo } from '@interfaces/episode-info'
+import { CommonModule } from '@angular/common'
 
 @Component({
   selector: 'app-character-list',
   standalone: true,
-  imports: [],
+  imports: [CommonModule],
   templateUrl: './character-list.component.html',
   styleUrl: './character-list.component.css',
 })

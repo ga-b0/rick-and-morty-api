@@ -10,6 +10,8 @@
 
 .characters__character {
   display: flex;
+  gap: 1rem;
+  align-items: center;
   background-color: var(--section-color);
   border-radius: 5px;
 }
@@ -17,6 +19,27 @@
 .character__picture {
   width: 40%;
   height: 100%;
+}
+
+.character__status__circle {
+  width: 10px;
+  display: inline-block;
+  background-color: red;
+  border-radius: 50%;
+  margin-right: 0.5rem;
+  height: 10px;
+}
+
+.character__status__circle--dead {
+  background-color: red;
+}
+
+.character__status__circle--alive {
+  background-color: rgb(8, 162, 8);
+}
+
+.character__status__circle--unknown {
+  background-color: gray;
 }
 
 .character__image {
@@ -29,4 +52,24 @@
 
 .texts {
   width: 60%;
+}
+
+.text__location,
+.text__episode {
+  color: #f5e3e3a1;
+}
+
+.pagination {
+  margin-top: 1rem;
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+}
+
+.pagination__button {
+  cursor: pointer;
+  border: none;
+  padding: 0.5rem 1.5rem;
+  border-radius: 50px;
+  font-weight: 600;
 }
