@@ -16,6 +16,8 @@ export class CharacterListComponent {
   characterService = inject(CharacterService)
   charactersInfo?: CharacterList
   episodes?: EpisodeInfo[]
+  startValue = 1
+  endValue = this.charactersInfo?.info.pages
 
   constructor() {
     this.characterService
@@ -39,5 +41,22 @@ export class CharacterListComponent {
         .getAllCharacters(this.charactersInfo!.info.next)
         .subscribe((data) => (this.charactersInfo = data))
     }
+  }
+
+  displayPage(page: number): void {
+    this.characterService
+      .getAllCharacters(this.API_CHARACTERS_URL + `/?page=${page}`)
+      .subscribe((data) => (this.charactersInfo = data))
+  }
+
+  generatePages(
+    start: number | undefined,
+    end: number | undefined
+  ): number[] | undefined {
+    if (start === undefined || end === undefined) {
+      return undefined
+    }
+    const length = end - start + 1
+    return Array.from({ length }, (_, index) => start + index)
   }
 }

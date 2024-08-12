@@ -6,6 +6,15 @@
   >
     Prev
   </button>
+  <ul class="pagination__pages">
+    <li
+      *ngFor="let i of generatePages(startValue, charactersInfo?.info?.pages)"
+    >
+      <button (click)="displayPage(i)" class="pagination__page__button">
+        {{ i }}
+      </button>
+    </li>
+  </ul>
   <button
     class="pagination__button"
     (click)="nextPage()"

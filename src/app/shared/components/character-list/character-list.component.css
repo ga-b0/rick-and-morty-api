@@ -73,3 +73,8 @@
   border-radius: 50px;
   font-weight: 600;
 }
+
+.pagination__pages {
+  display: flex;
+  list-style: none;
+}
