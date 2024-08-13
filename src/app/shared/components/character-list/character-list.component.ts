@@ -2,7 +2,7 @@ import { Component, inject } from '@angular/core'
 import { CommonModule } from '@angular/common'
 import { HttpErrorResponse } from '@angular/common/http'
 import { FormControl, FormGroup, ReactiveFormsModule } from '@angular/forms'
-import { CharacterService } from '@services/character.service'
+import { CharacterService } from '@services/home-services/character.service'
 import { CharacterList } from '@interfaces/characters/character-list'
 import { FilteredResults } from '@interfaces/characters/filtered-results'
 

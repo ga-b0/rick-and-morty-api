@@ -1,6 +1,6 @@
 import { Component, inject, signal, computed } from '@angular/core'
 import { CommonModule, UpperCasePipe } from '@angular/common'
-import { PokemonService } from '@services/pokemon.service'
+import { PokemonService } from '@services/home-services/pokemon.service'
 import { Pokemonselector } from '@interfaces/pokemon/pokemonselector'
 
 @Component({
