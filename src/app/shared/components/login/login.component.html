@@ -1,4 +1,12 @@
 <section class="login__section">
+  @if (message !== '') {
+    <div
+      [ngClass]="loggin ? 'login__message--success' : 'login__message--error'"
+      class="login__message"
+    >
+      {{ message }}
+    </div>
+  }
   <h2>Welcome Back</h2>
   <form [formGroup]="loginForm" (ngSubmit)="submitSesion()" class="login__form">
     <div class="form__email">
@@ -8,11 +16,18 @@
         type="text"
         id="username"
         formControlName="username"
+        [ngClass]="
+          !loginForm.valid &&
+          formSubmitted &&
+          loginForm.get('username')?.hasError('required')
+            ? 'form__input--invalid'
+            : ''
+        "
       />
       <span
         class="invalid__text"
         *ngIf="loginForm.get('username')?.hasError('required') && formSubmitted"
-        >El usuario es requerido</span
+        >The username is required</span
       >
     </div>
     <div class="form__password">
@@ -22,20 +37,28 @@
         type="password"
         id="password"
         formControlName="password"
+        [ngClass]="
+          !loginForm.valid &&
+          formSubmitted &&
+          (loginForm.get('password')?.hasError('minlength') ||
+            loginForm.get('password')?.hasError('required'))
+            ? 'form__input--invalid'
+            : ''
+        "
       />
       <span
         class="invalid__text"
         *ngIf="
           loginForm.get('password')?.hasError('minlength') && formSubmitted
         "
-        >La contraseña debe tener como mínimo 8 caracteres</span
+        >The password must be at least 8 characters long.</span
       >
       <span
         class="invalid__text"
         *ngIf="loginForm.get('password')?.hasError('required') && formSubmitted"
-        >La contraseña es requerida</span
+        >The password is required</span
       >
     </div>
-    <button class="form__button">Iniciar Sesión</button>
+    <button class="form__button">Login</button>
   </form>
 </section>

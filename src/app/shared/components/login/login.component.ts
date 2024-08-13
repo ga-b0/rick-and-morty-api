@@ -15,6 +15,8 @@ import { userCredentials } from '@fakedata/credentials-user'
 })
 export class LoginComponent {
   formSubmitted = false
+  message = ''
+  loggin = false
   loginForm = new FormGroup<LoginFields>({
     username: new FormControl('', {
       nonNullable: true,
@@ -39,7 +41,17 @@ export class LoginComponent {
     ) {
       window.localStorage.setItem('username', this.loginForm.value.username)
       window.localStorage.setItem('loggedin', 'true')
-      this.router.navigate(['/home'])
+      this.message = 'Successful login'
+      this.loggin = true
+      setTimeout(() => {
+        this.router.navigate(['/home'])
+      }, 1000)
+    } else {
+      this.loggin = false
+      this.message = 'Incorrect username or password'
+      setTimeout(() => {
+        this.message = ''
+      }, 4000)
     }
   }
 
