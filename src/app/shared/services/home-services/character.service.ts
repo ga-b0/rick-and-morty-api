@@ -9,7 +9,6 @@ import { EpisodeInfo } from '@interfaces/characters/episode-info'
 })
 export class CharacterService {
   charactersData?: Observable<CharacterList>
-  readonly API_CHARACTERS_URL = 'https://rickandmortyapi.com/api/character'
 
   constructor(private http: HttpClient) {}
 

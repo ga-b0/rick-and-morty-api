@@ -1,20 +1,12 @@
 import { Component } from '@angular/core'
 import { CommonModule } from '@angular/common'
 import { RouterOutlet } from '@angular/router'
-import { BasketballcounterComponent } from '@component/basketball-counter/basketballcounter.component'
-import { PokemonselectorComponent } from '@component/pokemon-selector/pokemonselector.component'
-import { PipesComponent } from '@component/pipes/pipes.component'
+import { NavbarLayoutComponent } from './shared/components/navbar-layout/navbar-layout.component'
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [
-    CommonModule,
-    RouterOutlet,
-    BasketballcounterComponent,
-    PokemonselectorComponent,
-    PipesComponent,
-  ],
+  imports: [CommonModule, RouterOutlet, NavbarLayoutComponent],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css',
 })

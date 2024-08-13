@@ -4,7 +4,7 @@ import { Router } from '@angular/router'
 import { FormControl, FormGroup, Validators } from '@angular/forms'
 import { CommonModule } from '@angular/common'
 import { LoginFields } from '@interfaces/login/login-fields'
-import { userCredentials } from '@fakedata/credentials-user'
+import { userCredentials } from '@fakedata/credentials-user.data'
 
 @Component({
   selector: 'app-login',
