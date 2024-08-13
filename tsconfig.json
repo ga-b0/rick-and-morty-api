@@ -25,7 +25,8 @@
       "@interfaces/*": ["./src/app/shared/interfaces/*"],
       "@enums/*": ["./src/app/shared/enums/*"],
       "@fakedata/*": ["./src/app/shared/data/*"],
-      "@component/*": ["./src/app/shared/components/*"]
+      "@component/*": ["./src/app/shared/components/*"],
+      "@guards/*": ["./src/app/shared/guards/*"]
     }
   },
   "angularCompilerOptions": {
