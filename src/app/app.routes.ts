@@ -26,6 +26,15 @@ export const routes: Routes = [
     canActivate: [authGuard],
     children: [
       {
+        path: '',
+        loadComponent: () =>
+          import('./shared/components/home-page/home-page.component').then(
+            (m) => m.HomePageComponent
+          ),
+        title: 'Home',
+        canActivate: [authGuard],
+      },
+      {
         path: 'basketball-counter',
         loadComponent: () =>
           import(

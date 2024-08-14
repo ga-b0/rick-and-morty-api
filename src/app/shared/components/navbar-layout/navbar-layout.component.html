@@ -1,5 +1,5 @@
 <header class="header">
-  <a routerLink="/home" class="header__home">Home</a>
+  <a [href]="routes.Home" class="header__home">Home</a>
   <nav class="header__nav">
     <input type="checkbox" id="header__nav--check" />
     <div class="nav__header"></div>
@@ -12,19 +12,24 @@
     </div>
     <ul class="header__links">
       <li>
-        <a class="header__link" routerLink="basketball-counter"
+        <a class="header__link" [href]="routes.BasketCounter"
           >Basketball Counter</a
         >
       </li>
       <li>
-        <a class="header__link" routerLink="/home/pokemon-selector"
+        <a class="header__link" [href]="routes.PokemonSelector"
           >Pokemon Selector</a
         >
       </li>
-      <li><a class="header__link" routerLink="/home/pipes">Pipes</a></li>
-      <li><a class="header__link" routerLink="/home/rest-api">Rest Api</a></li>
+      <li><a class="header__link" [href]="routes.Pipes">Pipes</a></li>
+      <li>
+        <a class="header__link" [href]="routes.RestApi">Rest Api</a>
+      </li>
     </ul>
   </nav>
+  <a class="header__home--mobile" [href]="routes.Home"
+    ><img src="/home.svg" alt=""
+  /></a>
   <div class="header__user">
     <p class="header__username">{{ username }}</p>
     <button class="header__logout" (click)="logout()">Logout</button>

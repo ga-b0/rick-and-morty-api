@@ -1,0 +1,19 @@
+<h1 class="title">Pages</h1>
+<section class="homepage">
+  @for (page of pagesInfo; track page.id) {
+    <article class="homepage__page">
+      <figure class="homepage__page__picture">
+        <img
+          [src]="page.imageUrl"
+          [alt]="page.imageAlt"
+          class="homepage__page__image"
+        />
+      </figure>
+      <div class="homepage__texts">
+        <h2>{{ page.title }}</h2>
+        <p>{{ page.description }}</p>
+        <a class="homepage__texts__cta" [href]="page.pageUrl">Visit site</a>
+      </div>
+    </article>
+  }
+</section>
