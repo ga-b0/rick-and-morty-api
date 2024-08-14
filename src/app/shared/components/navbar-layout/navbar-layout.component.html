@@ -28,10 +28,20 @@
     </ul>
   </nav>
   <a class="header__home--mobile" [href]="routes.Home"
-    ><img src="/home.svg" alt=""
+    ><img src="/home.svg" alt="Home Page Logo"
   /></a>
   <div class="header__user">
-    <p class="header__username">{{ username }}</p>
-    <button class="header__logout" (click)="logout()">Logout</button>
+    <input
+      class="header__home--user"
+      type="checkbox"
+      id="header__user--check"
+    />
+    <label for="header__user--check">
+      <img class="header__user__image--check" src="/user.svg" alt="User Logo" />
+    </label>
+    <div class="header__user_info">
+      <p class="header__username">{{ username }}</p>
+      <button class="header__logout" (click)="logout()">Logout</button>
+    </div>
   </div>
 </header>
