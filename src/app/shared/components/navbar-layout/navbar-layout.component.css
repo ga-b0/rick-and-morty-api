@@ -69,6 +69,11 @@
   border-radius: 20px;
   font-weight: 600;
   background-color: var(--box-color);
+  transition: background-color ease 0.3s;
+}
+
+.header__logout:hover {
+  background-color: #c4a80a;
 }
 
 @media (width <= 768px) {
@@ -91,6 +96,7 @@
   }
 
   .header__nav > .nav-btn > label > span {
+    cursor: pointer;
     display: block;
     width: 25px;
     height: 10px;

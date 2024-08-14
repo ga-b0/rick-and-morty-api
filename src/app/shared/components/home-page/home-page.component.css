@@ -27,6 +27,9 @@
 
   .homepage__texts {
     opacity: 1;
+    animation-name: text-popup;
+    animation-duration: 0.4s;
+    animation-fill-mode: both;
   }
 }
 
@@ -79,6 +82,7 @@
   z-index: 100;
   top: 50%;
   left: 50%;
+  transform-origin: 0 0;
   transform: translate(-50%, -50%);
   opacity: 0;
 }
@@ -91,6 +95,15 @@
   to {
     filter: blur(1.4px);
     filter: brightness(0.3);
+  }
+}
+
+@keyframes text-popup {
+  from {
+    scale: 0;
+  }
+  to {
+    scale: 1;
   }
 }
 
