@@ -1,6 +1,6 @@
-# Setup Project of Gabriel Calderón for Week1
+# Setup Project of Gabriel Calderón
 
-The project consists of the exercises proposed for week 1, corresponding to a Basketball Game Counter, Pokémon Selector and Pipes Component exercises
+The project consists of a Basketball Game Counter, Pokémon Selector and Pipes Component exercises
 
 ## Run Locally
 
