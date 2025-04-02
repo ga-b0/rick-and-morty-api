@@ -79,6 +79,10 @@
   text-align: center;
 }
 
+.login__credentials {
+  margin-top: 1rem;
+}
+
 .form__button {
   font-weight: 600;
   cursor: pointer;
